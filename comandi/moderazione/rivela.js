@@ -1,4 +1,4 @@
-import { downloadContentFromMessage } from ''
+const { downloadContentFromMessage } = require('@whiskeysockets/baileys')
 
 /*
 By dark  */
