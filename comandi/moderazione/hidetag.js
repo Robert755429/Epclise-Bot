@@ -1,9 +1,7 @@
-module.exports = {
-  name: 'hidetag',
-  run: async ({ sock, jid, args, isGroup, reply }) => {
-    if(!isGroup) return reply('Solo nei gruppi')
-    const meta = await sock.groupMetadata(jid)
-    const mentions = meta.participants.map(p => p.id)
-    await sock.sendMessage(jid, { text: args.join(' ') || '🌑 ECLIPSE', mentions })
-  }
-}
+module.exports = { name: 'hidetag', run: async ({ sock, jid, args, reply, isGroup, sender }) => {
+  if(!isGroup) return
+  const m = await sock.groupMetadata(jid)
+  if(!m.participants.find(p=>p.id===sender)?.admin) return reply('❌ Solo admin')
+  const mentions = m.participants.map(p=>p.id)
+  await sock.sendMessage(jid,{text:args.join(' ')||'🌑 ECLIPSE', mentions})
+} }
