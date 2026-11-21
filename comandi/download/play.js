@@ -1,0 +1,16 @@
+module.exports={name:'play',run:async({reply,args,sock,jid})=>{
+if(!args[0]) return reply('Uso: .play <nome canzone>')
+try{
+const q=encodeURIComponent(args.join(' '))
+const search=await fetch(`https://api.davidcyriltech.my.id/search/yt?q=${q}`)
+const sj=await search.json()
+const video=sj?.result?.[0]
+if(!video) return reply('❌ Non trovata')
+await reply(`🎵 Sto scaricando: *${video.title}*...`)
+const dl=await fetch(`https://api.davidcyriltech.my.id/download/ytmp3?url=${encodeURIComponent(video.url)}`)
+const dj=await dl.json()
+const url=dj?.result?.downloadUrl
+if(!url) return reply('❌ Errore')
+await sock.sendMessage(jid,{audio:{url},mimetype:'audio/mpeg',fileName:`${video.title}.mp3`})
+}catch{reply('❌ Errore .play 🌑')}
+}}
