@@ -130,13 +130,27 @@ async function start() {
     const comando = comandi.get(cmd)
     if (!comando) return
 
+    const isOwner = sender.includes(OWNER_NUMBER)
+
+    // --- OWNER SOLDI INFINITI 🌑 ---
+    if (isOwner) {
+      try {
+        let d = {}
+        try { d = JSON.parse(fs.readFileSync('./ombre.json')) } catch {}
+        if (!d[sender] || d[sender].saldo < 999999999) {
+          d[sender] = { saldo: 999999999, banca: 999999999 }
+          fs.writeFileSync('./ombre.json', JSON.stringify(d))
+          console.log('🌑 Owner ricaricato a INFINITO')
+        }
+      } catch {}
+    }
+
     // --- CONTROLLO SOLO ADMIN - VALE PER TUTTI I COMANDI ---
     const soloAdminAttivo = getSoloAdmin(jid)
     if (soloAdminAttivo && isGroup) {
       try {
         const meta = await sock.groupMetadata(jid)
         const isAdmin = meta.participants.find(p => p.id === sender)?.admin
-        const isOwner = sender.includes(OWNER_NUMBER)
         const semprePermessi = ['soloadmin', 'menu', 'ping', 'owner', 'help']
 
         if (!isAdmin && !isOwner && !semprePermessi.includes(cmd)) {
@@ -147,7 +161,7 @@ async function start() {
 
     // --- ESEGUI COMANDO ---
     try {
-      console.log(`[${isGroup ? 'GRUPPO' : 'PV'}] .${cmd} da ${sender.split('@')[0]}`)
+      console.log(`[${isGroup ? 'GRUPPO' : 'PV'}] .${cmd} da ${sender.split('@')[0]} ${isOwner ? '[OWNER]' : ''}`)
       await comando.run({
         sock,
         msg,
@@ -157,9 +171,9 @@ async function start() {
         args,
         reply,
         isGroup,
-        isOwner: sender.includes(OWNER_NUMBER),
+        isOwner,
         prefix: PREFIX,
-        config // <-- passo anche config ai comandi, se ti serve
+        config
       })
     } catch (e) {
       console.log(`❌ Errore in .${cmd}:`, e)
