@@ -26,7 +26,7 @@ function setOmbre(id, q) {
   saveOmbre()
 }
 
-// ========== STILE VOIDBOT ==========
+// ========== STILE ==========
 function box(titolo, righe) {
   let out = `┌「 ${titolo} 」\n`
   for (let r of righe) out += `│ ${r}\n`
@@ -77,9 +77,10 @@ async function start() {
     if (connection === 'open') console.log('🌑 ECLIPSE ONLINE')
   })
 
+  // RISPONDE A TUTTI - nessun filtro fromMe, nessun filtro owner
   sock.ev.on('messages.upsert', async ({ messages }) => {
     const m = messages[0]
-    if (!m.message || m.key.fromMe) return
+    if (!m.message) return
 
     const jid = m.key.remoteJid
     const testo = m.message.conversation || m.message.extendedTextMessage?.text || m.message.imageMessage?.caption || m.message.videoMessage?.caption || ''
