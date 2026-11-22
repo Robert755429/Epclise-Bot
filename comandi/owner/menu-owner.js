@@ -17,10 +17,8 @@ reply(box('👑  OWNER',[
 '_.pulisci_',
 '_.riavvia_',
 '_.setbio_',
-'_.setnome_',
 '_.setprefix_',
 '_.spegni_',
-'_.unlock_',
 '',
 ]))
 }}
