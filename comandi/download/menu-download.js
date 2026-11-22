@@ -1,2 +1,25 @@
-module.exports={name:'menu-download',run:async({reply})=>reply(`📥 *DOWNLOAD - 20*\n\n.play .musica .song .spotify\n.mp3 .mp4 .audio .video\n.youtube .yt-audio .yt-video\n.tiktok .instagram .facebook\n.twitter .pinterest\n.sticker .tosticker .toimg\n\nEs: .play sfera ebbasta`)
-               }
+module.exports={name:'menu-download',run:async({reply,box})=>{
+reply(box('📥  DOWNLOAD',[
+'',
+'_.Instagram_',
+'_.audio_',
+'_.facebook_',
+'_.mp3_',
+'_.mp4_',
+'_.musica_',
+'_.pinterest_',
+'_.play_',
+'_.song_',
+'_.spotify_',
+'_.sticker_',
+'_.tiktok_',
+'_.toimg_',
+'_.tosticker_',
+'_.twitter_',
+'_.video_',
+'_.youtube_',
+'_.yt-audio_',
+'_.yt-video_',
+'',
+]))
+}}
