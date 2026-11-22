@@ -1,2 +1,30 @@
-module.exports={name:'menu-ombre',run:async({reply})=>reply(`🌑 *OMBRE - 25*\n\n.saldo .ombre .wallet .banca\n.daily .lavoro .bonus .prestito\n.pay .dona .regala\n.ruba .furto .rapina\n.gamble .scommessa .lotteria .invest\n.deposita .preleva\n.shop .mercato\n.classifica .topombre\n\nScrivi .menu per tornare indietro`)
-               }
+module.exports={name:'menu-ombre',run:async({reply,box})=>{
+reply(box('🌑  OMBRE',[
+'',
+'_.banca_',
+'_.bonus_',
+'_.classifica_',
+'_.daily_',
+'_.deposita_',
+'_.dona_',
+'_.furto_',
+'_.gamble_',
+'_.invest_',
+'_.lavoro_',
+'_.lotteria_',
+'_.mercato_',
+'_.ombre_',
+'_.pay_',
+'_.preleva_',
+'_.prestito_',
+'_.rapina_',
+'_.regala_',
+'_.ruba_',
+'_.saldo_',
+'_.scommessa_',
+'_.shop_',
+'_.topombre_',
+'_.wallet_',
+'',
+]))
+}}
