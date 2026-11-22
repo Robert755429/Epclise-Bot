@@ -1,6 +1,39 @@
-module.exports = {
-  name: 'menu-moderazione',
-  run: async ({ reply }) => {
-    reply(`🛡️ *MODERAZIONE - 32 COMANDI*\n\n.warn .unwarn .ban .kick\n.tagall .hidetag .link\n.antilink .antispam .mute .unmute\n.promuovi .retrocedi .chiudi .apri\n.setnome .setdesc .regole .avvisi\n.del .clear .pin .unpin\n.listaadmin .listawarn .check\n.lockdown .unlock .add .remove\n.invita .revoca .infogruppo\n.menu-moderazione`)
-  }
-}
+module.exports={name:'menu-moderazione',run:async({reply,box})=>{
+reply(box('🛡️  MODERAZIONE',[
+'',
+'_.add_',
+'_.antilink_',
+'_.antispam_',
+'_.apri_',
+'_.avvisi_',
+'_.ban_',
+'_.check_',
+'_.chiudi_',
+'_.clear_',
+'_.del_',
+'_.hidetag_',
+'_.invita_',
+'_.kick_',
+'_.link_',
+'_.listaadmin_',
+'_.listawarn_',
+'_.lockdown_',
+'_.mute_',
+'_.pin_',
+'_.promuovi_',
+'_.regole_',
+'_.remove_',
+'_.retrocedi_',
+'_.rivela_',
+'_.setdesc_',
+'_.setnome_',
+'_.soloadmin_',
+'_.tagall_',
+'_.unlock_',
+'_.unmute_',
+'_.unpin_',
+'_.unwarn_',
+'_.warn_',
+'',
+]))
+}}
