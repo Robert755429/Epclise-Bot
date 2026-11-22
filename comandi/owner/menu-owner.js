@@ -1,4 +1,26 @@
-module.exports={name:'menu-owner',run:async({reply,isOwner})=>{
-if(!isOwner) return reply('❌ Solo OWNER 👑')
-reply(`👑 *OWNER - 20*\n\n.broadcast .ban-globale\n.block .unblock .join .leave\n.setnome .setbio .setprefix\n.addowner .delowner\n.listgruppi .listutenti\n.give .pulisci\n.eval .exec\n.riavvia .spegni`)
+module.exports={name:'menu-owner',run:async({reply,box})=>{
+reply(box('👑  OWNER',[
+'',
+'_.addowner_',
+'_.antispam_',
+'_.ban-globale_',
+'_.block_',
+'_.broadcast_',
+'_.delowner_',
+'_.eval_',
+'_.exec_',
+'_.give_',
+'_.join_',
+'_.leave_',
+'_.listgruppi_',
+'_.listutenti_',
+'_.pulisci_',
+'_.riavvia_',
+'_.setbio_',
+'_.setnome_',
+'_.setprefix_',
+'_.spegni_',
+'_.unlock_',
+'',
+]))
 }}
