@@ -1,2 +1,22 @@
-module.exports={name:'menu-utility',run:async({reply})=>reply(`🛠️ *UTILITY - 20*\n\n.ping .uptime .data .orario\n.info .utente .link .qr\n.meteo .traduci .valuta .wikipedia\n.cerca .calcola .conta .random\n.ip .ai .sondaggio\n\nScrivi .menu per tornare indietro`)
-}
+module.exports={name:'menu-utility',run:async({reply,box})=>{
+reply(box('🛠️  UTILITY',[
+'',
+'_.ai_',
+'_.calcola_',
+'_.cerca_',
+'_.conta_',
+'_.data_',
+'_.info_',
+'_.ip_',
+'_.link_',
+'_.meteo_',
+'_.orario_',
+'_.ping_',
+'_.qr_',
+'_.sondaggio_',
+'_.traduci_',
+'_.uptime_',
+'_.utente_',
+'',
+]))
+}}
