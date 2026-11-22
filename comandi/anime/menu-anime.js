@@ -1,3 +1,25 @@
-module.exports={name:'menu-anime',run:async({reply})=>{
-reply(`🌸 *ANIME - 20*\n\n.waifu .husbando .anime\n.neko .ship-anime .personaggio\n.quiz-anime .amv .opening\n.manga .cosplay .otaku\n.frase-anime .pokemon .naruto\n.onepiece .dragonball .deathnote\n.kawaii`)
+module.exports={name:'menu-anime',run:async({reply,box})=>{
+reply(box('🎌  ANIME',[
+'',
+'_.amv_',
+'_.anime_',
+'_.cosplay_',
+'_.deathnote_',
+'_.dragonball_',
+'_.frase-anime_',
+'_.husbando_',
+'_.kawaii_',
+'_.manga_',
+'_.naruto_',
+'_.neko_',
+'_.onepiece_',
+'_.opening_',
+'_.otaku_',
+'_.personaggio_',
+'_.pokemon_',
+'_.quiz-anime_',
+'_.ship-anime_',
+'_.waifu_',
+'',
+]))
 }}
